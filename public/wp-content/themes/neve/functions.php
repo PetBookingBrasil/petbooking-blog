@@ -78,17 +78,17 @@ function _neve_bootstrap_errors() {
 	printf( '<div class="notice notice-error"><p>%1$s</p></div>', $_neve_bootstrap_errors->get_error_message() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
-if ( $_neve_bootstrap_errors->has_errors() ) {
-	/**
-	 * Add notice for PHP upgrade.
-	 */
-	add_filter( 'template_include', '__return_null', 99 );
-	switch_theme( WP_DEFAULT_THEME );
-	unset( $_GET['activated'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	add_action( 'admin_notices', '_neve_bootstrap_errors' );
+// if ( $_neve_bootstrap_errors->has_errors() ) {
+// 	/**
+// 	 * Add notice for PHP upgrade.
+// 	 */
+// 	add_filter( 'template_include', '__return_null', 99 );
+// 	switch_theme( WP_DEFAULT_THEME );
+// 	unset( $_GET['activated'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+// 	add_action( 'admin_notices', '_neve_bootstrap_errors' );
 
-	return;
-}
+// 	return;
+// }
 
 /**
  * Themeisle SDK filter.
